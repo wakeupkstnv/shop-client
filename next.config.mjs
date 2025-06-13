@@ -8,6 +8,7 @@ const nextConfig = {
   },
   images: {
     domains: [
+      'picsum.photos',
       'i.imgur.com',
       'images.samsung.com',
       'store.storeimages.cdn-apple.com',

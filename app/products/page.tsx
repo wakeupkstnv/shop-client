@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Slider } from "@/components/ui/slider"
-import { SlidersHorizontal, ChevronDown } from "lucide-react"
+import { SlidersHorizontal, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Өнімдер | KazShop",
@@ -57,19 +57,9 @@ export default function ProductsPage() {
               <div className="space-y-4">
                 <Slider defaultValue={[0, 500000]} max={1000000} step={10000} />
                 <div className="flex items-center justify-between">
-                  <Input
-                    type="number"
-                    placeholder="Мин"
-                    className="w-[45%] text-sm"
-                    defaultValue={0}
-                  />
+                  <Input type="number" placeholder="Мин" className="w-[45%] text-sm" defaultValue={0} />
                   <span className="text-gray-500">-</span>
-                  <Input
-                    type="number"
-                    placeholder="Макс"
-                    className="w-[45%] text-sm"
-                    defaultValue={500000}
-                  />
+                  <Input type="number" placeholder="Макс" className="w-[45%] text-sm" defaultValue={500000} />
                 </div>
               </div>
             </div>
@@ -117,4 +107,30 @@ export default function ProductsPage() {
 
           {/* Pagination */}
           <div className="flex justify-center mt-12">
-            \
+            <nav className="flex items-center gap-1">
+              <Button variant="outline" size="icon" className="w-8 h-8">
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="sm" className="w-8 h-8 bg-primary text-white">
+                1
+              </Button>
+              <Button variant="outline" size="sm" className="w-8 h-8">
+                2
+              </Button>
+              <Button variant="outline" size="sm" className="w-8 h-8">
+                3
+              </Button>
+              <span className="mx-1">...</span>
+              <Button variant="outline" size="sm" className="w-8 h-8">
+                10
+              </Button>
+              <Button variant="outline" size="icon" className="w-8 h-8">
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+  )
+}
